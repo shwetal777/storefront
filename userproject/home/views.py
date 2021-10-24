@@ -14,9 +14,9 @@ def loginUser(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        print(username, password)
         # check if user has correct credentials
         user = authenticate(username=username, password=password)
+
         if user is not None:
             login(request, user)
             # A backend authenticated the credentials
